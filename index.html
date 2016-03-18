@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Photo Album</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+	<div id="app">
+<!--		<div class="overlay">
+			<button class="back"> Back to Album </button>
+				<div class="imageframe">
+					<img src="http://slammedmotors.weebly.com/uploads/4/1/2/1/4121762/6644340_orig.jpg">
+				</div>
+		</div> -->
+	</div>
+	<script type="text" id="overlayTemplate">
+		<div class="overlay">
+			<button class="back"> Back to Album </button>
+				<div class="imageframe">
+					<img src="{{img}}">
+				</div>
+	</script>
+
+	<script type="text" id="albumpage">
+			<h1 class="header">
+				{{name}}
+			</h1>
+			<div id="navbarContainer">
+			<ul id="navbar">
+			{{#albums}}
+					<li> {{.}} </li>
+			{{/albums}}
+			</ul>
+			</div>
+			<div id="PhotoContainer">
+				{{#images}}
+				<div class="photos">
+					<img class="car" src="{{img}}">
+					<h3 class="caption">{{name}}</h3>
+				</div>
+				{{/images}}
+			</div>
+
+	</script>
+
+	<script type="text" id="homepage">
+	<div class="home">
+		<div class="banner">
+			My Albums
+		</div>
+		<div id="AlbumContainer">
+			{{#albums}}
+				<div class="album">
+					<img class="thumbnail" src="{{thumbnail}}" />
+					<h3 class="caption">{{name}}</h3>
+				</div>
+			{{/albums}}
+		</div>
+	</div>
+	</script>
+
+	<script   src="https://code.jquery.com/jquery-1.12.1.min.js"   integrity="sha256-I1nTg78tSrZev3kjvfdM5A5Ak/blglGzlaZANLPDl3I="   crossorigin="anonymous"></script>
+	<script src="js/data.js"></script>
+	<script src="js/mustache.min.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
